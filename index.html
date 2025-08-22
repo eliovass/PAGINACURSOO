@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .course-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .sidebar {
+            transition: transform 0.3s ease;
+        }
+        .sidebar-hidden {
+            transform: translateX(-100%);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a, #10b981);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Menú Horizontal -->
+    <nav class="bg-gradient-to-r from-blue-900 to-teal-600 text-white p-4 fixed w-full top-0 z-20 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://raw.githubusercontent.com/username/repo/main/logo.png" alt="Logo" class="h-12 mr-3 rounded-full">
+                <span class="text-2xl font-bold tracking-tight">Cursos Online</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-teal-200 transition font-semibold">Inicio</a>
+                <a href="#cursos" class="hover:text-teal-200 transition font-semibold">Cursos</a>
+                <a href="#nosotros" class="hover:text-teal-200 transition font-semibold">Nosotros</a>
+                <a href="#contacto" class="hover:text-teal-200 transition font-semibold">Contacto</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menú Vertical (Sidebar) -->
+    <aside id="sidebar" class="bg-gradient-to-b from-blue-800 to-teal-700 text-white w-64 h-full fixed top-0 left-0 z-30 sidebar">
+        <div class="p-4 flex items-center border-b border-teal-500">
+            <img src="https://raw.githubusercontent.com/username/repo/main/logo-sidebar.png" alt="Logo Sidebar" class="h-10 mr-2 rounded-full">
+            <span class="text-xl font-semibold">Menú</span>
+        </div>
+        <ul class="p-4 space-y-4">
+            <li><a href="#programacion" class="hover:bg-teal-600 p-2 rounded transition flex items-center"><i class="fas fa-code mr-2"></i> Programación</a></li>
+            <li><a href="#diseno" class="hover:bg-teal-600 p-2 rounded transition flex items-center"><i class="fas fa-paint-brush mr-2"></i> Diseño</a></li>
+            <li><a href="#marketing" class="hover:bg-teal-600 p-2 rounded transition flex items-center"><i class="fas fa-chart-line mr-2"></i> Marketing</a></li>
+            <li><a href="#idiomas" class="hover:bg-teal-600 p-2 rounded transition flex items-center"><i class="fas fa-globe mr-2"></i> Idiomas</a></li>
+        </ul>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto mt-20 md:ml-64 p-6">
+        <section id="home" class="mb-12 hero-section p-8 rounded-xl shadow-lg text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">¡Desarrolla tus Habilidades!</h1>
+            <p class="text-lg md:text-xl mb-6">Cursos diseñados por expertos para impulsar tu carrera profesional.</p>
+            <a href="#cursos" class="bg-teal-400 text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-teal-300 transition">Explorar Cursos</a>
+        </section>
+
+        <section id="cursos" class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">Nuestros Cursos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="course-card bg-white p-6 rounded-xl shadow-md">
+                    <img src="https://raw.githubusercontent.com/username/repo/main/python-course.jpg" alt="Curso Programación" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Programación en Python</h3>
+                    <p class="text-gray-600 mb-4">Aprende Python desde los fundamentos hasta proyectos avanzados.</p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline">Inscribirse</a>
+                </div>
+                <div class="course-card bg-white p-6 rounded-xl shadow-md">
+                    <img src="https://raw.githubusercontent.com/username/repo/main/design-course.jpg" alt="Curso Diseño" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Diseño Gráfico</h3>
+                    <p class="text-gray-600 mb-4">Crea diseños impactantes con Photoshop y Illustrator.</p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline">Inscribirse</a>
+                </div>
+                <div class="course-card bg-white p-6 rounded-xl shadow-md">
+                    <img src="https://raw.githubusercontent.com/username/repo/main/marketing-course.jpg" alt="Curso Marketing" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Marketing Digital</h3>
+                    <p class="text-gray-600 mb-4">Estrategias para liderar en el mundo digital.</p>
+                    <a href="#" class="text-blue-600 font-semibold hover:underline">Inscribirse</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">Sobre Nosotros</h2>
+            <p class="text-gray-700 text-center max-w-2xl mx-auto">Somos una plataforma dedicada a ofrecer educación de calidad con cursos creados por expertos en la industria.</p>
+        </section>
+
+        <section id="contacto" class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">Contacto</h2>
+            <p class="text-gray-700 text-center max-w-2xl mx-auto">¿Preguntas? Escríbenos a <a href="mailto:info@cursosonline.com" class="text-blue-600 hover:underline">info@cursosonline.com</a>.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-900 to-teal-600 text-white p-6 text-center">
+        <p class="text-sm">&copy; 2025 Cursos Online. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-hidden');
+        });
+    </script>
+</body>
+</html>
